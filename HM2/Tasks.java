@@ -19,17 +19,17 @@ public class Tasks {
     public static void runConsole() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Задачи: ");
+        System.out.println("Р—Р°РґР°С‡Рё: ");
         for(int i = 0; taskList.size() > i; i++) {
             System.out.println(String.format("%d. %s", i+1, taskList.get(i).description()));
         }
-        System.out.print("Введите номер: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ: ");
         int choice = scan.nextInt();
         if(taskList.size() >= choice && choice > 0) {
             taskList.get(choice - 1).run(scan);
         }
         else {
-            System.out.println("Такой задачи нет, выхожу из системы");
+            System.out.println("РўР°РєРѕР№ Р·Р°РґР°С‡Рё РЅРµС‚, РІС‹С…РѕР¶Сѓ РёР· СЃРёСЃС‚РµРјС‹");
         }
         scan.close();
     }
@@ -43,19 +43,19 @@ interface Task {
 class CountEvensTask implements Task {
     @Override
     public void run(Scanner scan) {
-        System.out.println("Введите сколько элементов массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°:");
         int[] nums = new int[scan.nextInt()];
-        System.out.println("Введите элементы массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°:");
         for(int i = 0; nums.length > i; i++) {
             nums[i] = scan.nextInt();
         }
         int count = countEvens(nums);
-        System.out.println("Количество четных элементов: " + count);
+        System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " + count);
     }
 
     @Override
     public String description() {
-       return "Посчитать количество четных элементов массива";
+       return "РџРѕСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°";
     }
 
     private int countEvens(int[] nums) {
@@ -71,19 +71,19 @@ class CountEvensTask implements Task {
 class Difference implements Task {
     @Override
     public void run(Scanner scan) {
-        System.out.println("Введите сколько элементов массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°:");
         int[] nums = new int[scan.nextInt()];
-        System.out.println("Введите элементы массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°:");
         for(int i = 0; nums.length > i; i++) {
             nums[i] = scan.nextInt();
         }
         int difference = max(nums) - min(nums);
-        System.out.println("Разница между максимальным и минимальным составляет: " + difference);
+        System.out.println("Р Р°Р·РЅРёС†Р° РјРµР¶РґСѓ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј Рё РјРёРЅРёРјР°Р»СЊРЅС‹Рј СЃРѕСЃС‚Р°РІР»СЏРµС‚: " + difference);
     }
 
     @Override
     public String description() {
-        return "Посчитать разницу максимальным элементом и маленьким";
+        return "РџРѕСЃС‡РёС‚Р°С‚СЊ СЂР°Р·РЅРёС†Сѓ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј СЌР»РµРјРµРЅС‚РѕРј Рё РјР°Р»РµРЅСЊРєРёРј";
     }
 
     private int min(int[] nums) {
@@ -108,19 +108,19 @@ class Difference implements Task {
 class ZeroNeighbors implements Task {
     @Override
     public void run(Scanner scan) {
-        System.out.println("Введите сколько элементов массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°:");
         int[] nums = new int[scan.nextInt()];
-        System.out.println("Введите элементы массива:");
+        System.out.println("Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°:");
         for(int i = 0; nums.length > i; i++) {
             nums[i] = scan.nextInt();
         }
         boolean bool = hasZeroNeigbors(nums);
-        System.out.println("Ответ: " + (bool ? "Да" : "Нет"));
+        System.out.println("РћС‚РІРµС‚: " + (bool ? "Р”Р°" : "РќРµС‚"));
     }
 
     @Override
     public String description() {
-        return "Проверяет, есть ли в переданном массиве два соседних элемента со значением 0";
+        return "РџСЂРѕРІРµСЂСЏРµС‚, РµСЃС‚СЊ Р»Рё РІ РїРµСЂРµРґР°РЅРЅРѕРј РјР°СЃСЃРёРІРµ РґРІР° СЃРѕСЃРµРґРЅРёС… СЌР»РµРјРµРЅС‚Р° СЃРѕ Р·РЅР°С‡РµРЅРёРµРј 0";
     }
 
     private boolean hasZeroNeigbors(int[] nums) {

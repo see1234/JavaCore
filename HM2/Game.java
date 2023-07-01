@@ -1,4 +1,4 @@
-package ru.gb.jcore.tictactoe;
+﻿package ru.gb.jcore.tictactoe;
 
 import java.util.Random;
 import java.util.Scanner;
